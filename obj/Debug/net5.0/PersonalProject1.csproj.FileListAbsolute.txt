@@ -1,0 +1,15 @@
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/bin/Debug/net5.0/PersonalProject1.deps.json
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/bin/Debug/net5.0/PersonalProject1.runtimeconfig.json
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/bin/Debug/net5.0/PersonalProject1.runtimeconfig.dev.json
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/bin/Debug/net5.0/PersonalProject1.dll
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/bin/Debug/net5.0/ref/PersonalProject1.dll
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/bin/Debug/net5.0/PersonalProject1.pdb
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/obj/Debug/net5.0/PersonalProject1.csproj.AssemblyReference.cache
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/obj/Debug/net5.0/PersonalProject1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/obj/Debug/net5.0/PersonalProject1.AssemblyInfoInputs.cache
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/obj/Debug/net5.0/PersonalProject1.AssemblyInfo.cs
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/obj/Debug/net5.0/PersonalProject1.csproj.CoreCompileInputs.cache
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/obj/Debug/net5.0/PersonalProject1.dll
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/obj/Debug/net5.0/ref/PersonalProject1.dll
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/obj/Debug/net5.0/PersonalProject1.pdb
+/Users/kaileyfreedman-setaro/Documents/GitHub/PersonalProject1/obj/Debug/net5.0/PersonalProject1.genruntimeconfig.cache
