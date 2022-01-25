@@ -23,5 +23,16 @@ At a high level, the Personality Quiz works in the following way:
    * Increases the appropriate score by 1
 4. When all of the questions have been answered, use the highest score to display the result of the quiz.
 
-![Project Proposal Flow Chart](../images/projectproposalflowchart.png)
+# Original Flow Charts
+![Project Proposal Flow Chart](images/flowchart1.png)
+![Project Proposal Flow Chart](images/flowchart2.png)
+![Project Proposal Flow Chart](images/flowchart3.png)
 
+# Updated Flow Charts
+
+
+## Methods and Classes
+
+static int AskQuestion(Question)
+static int GetValidAnswer(List<string> answers);
+static string GetResult(List<int> scores, List<string> results);
