@@ -29,6 +29,9 @@ At a high level, the Personality Quiz works in the following way:
 ![Project Proposal Flow Chart](images/flowchart3.png)
 
 # Updated Flow Charts
+![Project Proposal Flow Chart](images/revisedflowchart1.png)
+![Project Proposal Flow Chart](images/revisedflowchart2.png)
+![Project Proposal Flow Chart](images/revisedflowchart3.png)
 
 
 ## Methods and Classes
