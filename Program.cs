@@ -7,6 +7,21 @@ namespace PersonalProject1
     {
         static void Main(string[] args)
         {
+            if (args.Length > 0 && args[0] == "tets")
+            {
+                TestAll();
+                return;
+            }
+
+        static void TestAll()
+        {
+            bool testLoadFile = TestAskQuestion.RunTest();
+            Console.WriteLine($"Test LoadFile(fileman): {testLoadFile}");
+
+            bool testGetUserSelection = TestGetResult.RunTest();
+            Console.WriteLine($"Test GetUserSelection(options): {testLoadFile}");
+        }
+
             Question location = new Question();
 
             location.question = "Where would you like to go?";
