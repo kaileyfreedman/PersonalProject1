@@ -6,7 +6,13 @@ namespace PersonalProject1
     {
         public static bool RunTest()
         {
-            return false;
+            List<string> scores = Program.LoadFile("test_socres.txt").ToList();
+
+            if(scores.Count != 3)
+            {
+                Console.Error.WriteLine("The file test_scores should have 3 lines but that was not the case.");
+                return false;
+            }
         }
     }
 }
