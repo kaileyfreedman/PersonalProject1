@@ -9,14 +9,15 @@ namespace PersonalProject1
             Question testQuestion = new Question();
             testQuestion.question = "Why did the chicken cross the road?";
             testQuestion.answers.Add("To get to the other side.");
-            testQuestion.answers.Add("Because it was free-range.");
-            testQuestion.answers.Add("He was hungry.");
+            testQuestion.answers.Add("He was chasing a tiger.");
+            testQuestion.answers.Add("There was a bbq restaurant across the street.");
+
 
             Console.WriteLine("Expected: the output to contain 3 options");
             Console.WriteLine("First type 4. This should be an invalid option. It will ask again");
             Console.WriteLine("Next type 1. This should be a valid option. By selecting 1, the method should return 1.");
 
-            int result = Program.AskQuestion(testQuestion.question);
+            int result = Program.AskQuestion(testQuestion);
 
             Question testQuestion = new Question();
             testQuestion.question = "How much wood could a woodchuck chuck if a woodchuck could chuck wood?";
@@ -28,7 +29,7 @@ namespace PersonalProject1
             Console.WriteLine("First type 4. This should be an invalid option. It will ask again");
             Console.WriteLine("Next type 1. This should be a valid option. By selecting 1, the method should return 1.");
 
-            int result = Program.AskQuestion(testQuestion.question);
+            int result = Program.AskQuestion(testQuestion);
 
             Question testQuestion = new Question();
             testQuestion.question = "WIll Brooklin win the lottery?");
@@ -40,7 +41,7 @@ namespace PersonalProject1
             Console.WriteLine("First type 4. This should be an invalid option. It will ask again");
             Console.WriteLine("Next type 1. This should be a valid option. By selecting 1, the method should return 1.");
 
-            int result = Program.AskQuestion(testQuestion.question);
+            int result = Program.AskQuestion(testQuestion);
 
             return false;
 
@@ -55,7 +56,7 @@ namespace PersonalProject1
             {
 
             }
-            return true           
+            return true;           
         }
     }
 }
