@@ -5,6 +5,7 @@ namespace PersonalProject1
 {
     class TestGetResult
     {
+        // TODO(jcollard 2022-02-05): Rename this method to RunTest()
         public static bool TestGetResult()
         {
             List<int> testScores = new List<int>();
@@ -28,11 +29,13 @@ namespace PersonalProject1
             testScores.Add(5);
             testScores.Add(2);
 
+            // TODO(jcollard 2022-02-05): Remove List<string> from the beginning of this line.
             List<string> testResults = new List<string>();
             testResults = new List<string>();
             testResults.Add("Chicken");
             testResults.Add("Cow");
 
+            // TODO(jcollard 2022-02-05): Remove string from the beggining of this line.
             string result = Program.GetResult(testScores, testResults);
 
             if (result != "Chicken")
@@ -41,48 +44,8 @@ namespace PersonalProject1
                 return false;
             }
 
-            //  return false;
-            //  testInput = "2";
-            //  testResult = Program.IsValidAnswer(testInput);
-            //  expected = true;
-            //  if (testResult != expected)
-            //  {
-            //      Console.Error.WriteLine($"Failure: Expected true but was actually {testResult}");
-            //      return false;
-            //  }
+            // TODO(jcollard 2022-02-05): Try adding a test which uses 4 scores and 4 responses
 
-            //  testInput = "-2";
-            //  testResult = Program.IsValidAnswer(testInput);
-            //  expected = false;
-            //  if (testResult != expected)
-            //  {
-            //      Console.Error.WriteLine($"Failure: Expected false but was actually {testResult2}");
-            //      return false;
-            //  }
-
-            //  testInput = "3.5";
-            //  testResult = Program.IsValidAnswer(testInput);
-            //  expected = false;
-
-            //  if (testResult != expected)
-            //  {
-            //      Console.Error.WriteLine($"Failure: Expected true but was actually {testResult}");
-            //      return false;
-            //  }
-
-            //  try
-            //  {
-            //      testResult = Program.IsValidAnswer(null);
-
-            //      Console.Error.WriteLine("Failure: Expected the program to crash. But it did not.");
-            //      return false;
-            //  }
-            //  catch
-            //  {
-
-            //  }
-
-            // Our method seems to be working
             return true;
         }
     }
