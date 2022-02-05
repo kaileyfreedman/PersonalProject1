@@ -96,7 +96,7 @@ namespace PersonalProject1
             return -1;
         }
 
-        static int GetValidAnswer(List<string> answers)
+        public static int GetValidAnswer(List<string> answers)
         {
             // Validate that there is at least 1 possible answer.
             // If the list of answers is empty, throw an exception
@@ -110,7 +110,7 @@ namespace PersonalProject1
             return -1;
         }
 
-        static string GetResult(List<int> scores, List<string> results)
+        public static string GetResult(List<int> scores, List<string> results)
         {
             // Initialize highest to 0. This variable represents the highest score we have seen so far.
             // Initialize highestIx to 0. This variable represents the index of the highest score we have seen so far.
