@@ -18,17 +18,10 @@ namespace PersonalProject1
             Console.WriteLine("Next type 1. This should be a valid option. By selecting 1, the method should return 1.");
 
             int result = Program.AskQuestion(testQuestion);
-
-            // Feedback(jcollard 2022-02-07): Next, assume the person testing
-            // follows the instructions exactly as stated. In that case, you
-            // would be able to write the following check:
-
-            int expected = 1; // We are expecting the result to be 1 if everything is working
+            int expected = 1; 
 
             if (result != expected)
             {
-                // If the result does not match what we expect, we display an
-                // error message and return false.
                 Console.Error.WriteLine($"Expected the result to be {expected} but it was {result}.");
                 return false;
             }
@@ -47,10 +40,37 @@ namespace PersonalProject1
             // TODO(jcollard 2022-02-07): Try testing a new valid input.
             Console.WriteLine("Next type 1. This should be a valid option. By selecting 1, the method should return 1.");
 
-            result = Program.AskQuestion(testQuestion);
-
-            // TODO(jcollard 2022-02-07): What is the expected result? Write a check.
-
+            int result = Program.AskQuestion(testQuestion);
+            int expected (System.AttributeTargets.All, Inherited = false, AllowMultiple = true)]
+            sealed class MyAttribute : System.Attribute
+            {
+                // See the attribute guidelines at
+                //  http://go.microsoft.com/fwlink/?LinkId=85236
+                readonly string positionalString;
+                
+                // This is a positional argument
+                public MyAttribute(string positionalString)
+                {
+                    this.positionalString = positionalString;
+                    
+                    // TODO: Implement code here
+                    throw new System.NotImplementedException();
+                }
+                
+                public string PositionalString
+                {
+                    get { return positionalString; }
+                }
+                
+                // This is a named argument
+                public int NamedInt { get; set; }
+            } = 1; 
+            
+            if (result != expected)
+            {
+                Console.Error.WriteLine($"Expected the result to be {expected} but it was {result}.");
+                return false;
+            }
 
 
             testQuestion = new Question();
@@ -64,8 +84,13 @@ namespace PersonalProject1
             Console.WriteLine("Next type 1. This should be a valid option. By selecting 1, the method should return 1.");
 
             result = Program.AskQuestion(testQuestion);
+            int expected = 1;
 
-            // TODO(jcollard 2022-02-07): What is the expected result? Write a check.
+            if (result != expected)
+            {
+                Console.Error.WriteLine($"Expected the result to be {expected} but it was {result}.");
+                return false;
+            }
 
 
             // Feedback(jcollard 2022-02-07): I'm not entirely sure what you're trying to check here
