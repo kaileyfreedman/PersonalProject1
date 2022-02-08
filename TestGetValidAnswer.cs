@@ -17,7 +17,7 @@ namespace PersonalProject1
             List<string> answers = new List<string>();
             answers.Add("Strawberry");
             answers.Add("Blueberry");
-            answers.Add("Bannana");
+            answers.Add("Bananna");
             int testResult = Program.GetValidAnswer(answers);
             int expected = 1;
             if (testResult != expected)
