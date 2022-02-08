@@ -5,8 +5,7 @@ namespace PersonalProject1
 {
     class TestGetResult
     {
-        // TODO(jcollard 2022-02-05): Rename this method to RunTest()
-        public static bool TestGetResult()
+        public static bool RunTest()
         {
             List<int> testScores = new List<int>();
             testScores.Add(3);
@@ -29,14 +28,12 @@ namespace PersonalProject1
             testScores.Add(5);
             testScores.Add(2);
 
-            // TODO(jcollard 2022-02-05): Remove List<string> from the beginning of this line.
-            List<string> testResults = new List<string>();
+            testResults = new List<string>();
             testResults = new List<string>();
             testResults.Add("Chicken");
             testResults.Add("Cow");
 
-            // TODO(jcollard 2022-02-05): Remove string from the beggining of this line.
-            string result = Program.GetResult(testScores, testResults);
+            result = Program.GetResult(testScores, testResults);
 
             if (result != "Chicken")
             {
