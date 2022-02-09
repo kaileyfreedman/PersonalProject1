@@ -18,6 +18,8 @@ namespace PersonalProject1
             answers.Add("Strawberry");
             answers.Add("Blueberry");
             answers.Add("Bananna");
+
+            // do another with 2 or 4 answers
             int testResult = Program.GetValidAnswer(answers);
             int expected = 1;
             if (testResult != expected)
