@@ -13,14 +13,18 @@ namespace PersonalProject1
                 return;
             }
 
-        static void TestAll()
-        {
-            bool testLoadFile = TestAskQuestion.RunTest();
-            Console.WriteLine($"Test LoadFile(fileman): {testLoadFile}");
+            static void TestAll()
+            {
+                bool testAskQuestion = TestAskQuestion.RunTest();
+                Console.WriteLine($"Test AskQuetsion(fileman): {testAskQuestion}");
 
-            bool testGetUserSelection = TestGetResult.RunTest();
-            Console.WriteLine($"Test GetUserSelection(options): {testLoadFile}");
-        }
+                bool testGetResult = TestGetResult.RunTest();
+                Console.WriteLine($"Test GetReuslt (options): {testGetResult}");
+
+                bool testGetValidAnswer = TestGetValidAnswer.RunTest();
+                Console.WriteLine($"Test testGetValidAnswer (options): {testGetValidAnswer}");
+
+            }
 
             Question location = new Question();
 
@@ -62,7 +66,7 @@ namespace PersonalProject1
             color.answers.Add("red");
             color.answers.Add("green");
             color.answers.Add("orange");
-            
+
             Console.WriteLine(color.question);
             Console.WriteLine($"1. {color.answers[0]}");
             Console.WriteLine($"2. {color.answers[1]}");
@@ -71,7 +75,7 @@ namespace PersonalProject1
             Console.WriteLine($"5. {color.answers[4]}");
 
             Question movie = new Question();
-            
+
             movie.question = "What is your favorite movie?";
             movie.answers.Add("Lady and the Tramp");
             movie.answers.Add("Shreck");
@@ -86,18 +90,44 @@ namespace PersonalProject1
             Console.WriteLine($"4. {movie.answers[3]}");
             Console.WriteLine($"5. {movie.answers[4]}");
         }
-        
+
         public static int AskQuestion(Question question)
         {
             // Display the question
             // Loop through each answer and display it
             // Use the GetValidAnswer method to get the user's response
             // Return the user's response
+
+            // Second
             return -1;
         }
 
         public static int GetValidAnswer(List<string> answers)
         {
+            int userChoice;
+
+            do
+            {
+                Console.WriteLine("Enter a number greater than 0:");
+                string input = Console.ReadLine();
+                bool isANumber = int.TryParse(input, out userChoice);
+                if (isANumber == false)
+                {
+                    Console.Error.WriteLine("You did not enter a number.");
+                }
+                else if (userChoice <= 0 || userChoice >= answers.Count)
+                {
+                    Console.WriteLine($"That number is not greater than 0 or less than {answers.Count}.");
+                }
+            }
+            while (userChoice <= 0 || userChoice >= answers.Count);
+          
+            return userChoice -1;
+        }
+
+
+            
+            
             // Validate that there is at least 1 possible answer.
             // If the list of answers is empty, throw an exception
             // Otherwise, Display a message asking the user to select an option.
@@ -107,26 +137,29 @@ namespace PersonalProject1
             // Display an error message
             // Go to 3
             // Otherwise, return the user's choice.
-            return -1;
-        }
 
-        public static string GetResult(List<int> scores, List<string> results)
-        {
-            // Initialize highest to 0. This variable represents the highest score we have seen so far.
-            // Initialize highestIx to 0. This variable represents the index of the highest score we have seen so far.
-            // Loop through each score in scores, tracking the index in a variable currentIx
-            // If the score is greater than the highest score
-            // Update highest to store the score (this is the highest score we have seen so far)
-            // Update highestIx to store the currentIx (this is the index of the highest score we have seen so far)
-            // After we have checked each score, highestIx should be the index of the highest score.
-            // return results[highestIx];
-            return null;
-        }
-    }
+            // First
 
-    class Question
+
+    public static string GetResult(List<int> scores, List<string> results)
     {
-        public string question;
-        public List<string> answers = new List<string>();
+        // Initialize highest to 0. This variable represents the highest score we have seen so far.
+        // Initialize highestIx to 0. This variable represents the index of the highest score we have seen so far.
+        // Loop through each score in scores, tracking the index in a variable currentIx
+        // If the score is greater than the highest score
+        // Update highest to store the score (this is the highest score we have seen so far)
+        // Update highestIx to store the currentIx (this is the index of the highest score we have seen so far)
+        // After we have checked each score, highestIx should be the index of the highest score.
+        // return results[highestIx];
+
+        // Third
+        return null;
     }
+}
+
+class Question
+{
+    public string question;
+    public List<string> answers = new List<string>();
+}
 }

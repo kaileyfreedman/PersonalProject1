@@ -40,31 +40,8 @@ namespace PersonalProject1
             // TODO(jcollard 2022-02-07): Try testing a new valid input.
             Console.WriteLine("Next type 1. This should be a valid option. By selecting 1, the method should return 1.");
 
-            int result = Program.AskQuestion(testQuestion);
-            int expected (System.AttributeTargets.All, Inherited = false, AllowMultiple = true)]
-            sealed class MyAttribute : System.Attribute
-            {
-                // See the attribute guidelines at
-                //  http://go.microsoft.com/fwlink/?LinkId=85236
-                readonly string positionalString;
-                
-                // This is a positional argument
-                public MyAttribute(string positionalString)
-                {
-                    this.positionalString = positionalString;
-                    
-                    // TODO: Implement code here
-                    throw new System.NotImplementedException();
-                }
-                
-                public string PositionalString
-                {
-                    get { return positionalString; }
-                }
-                
-                // This is a named argument
-                public int NamedInt { get; set; }
-            } = 1; 
+            result = Program.AskQuestion(testQuestion);
+            
             
             if (result != expected)
             {
@@ -84,7 +61,7 @@ namespace PersonalProject1
             Console.WriteLine("Next type 1. This should be a valid option. By selecting 1, the method should return 1.");
 
             result = Program.AskQuestion(testQuestion);
-            int expected = 1;
+            expected = 1;
 
             if (result != expected)
             {
@@ -93,14 +70,10 @@ namespace PersonalProject1
             }
 
 
-            // Feedback(jcollard 2022-02-07): I'm not entirely sure what you're trying to check here
-            // are you expecting an error to happen?
             try
             {
-                testQuestion = new Question();
-                testQuestion.question = "WIll it rain tomorrow?";
-                testQuestion.answers.Add("no");
-                Console.WriteLine("Expected: the output to contain 3 options");
+                Program.AskQuestion(null);
+                Console.WriteLine("Expected: an exception");
                 return false;
             }
 
