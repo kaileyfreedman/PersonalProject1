@@ -95,7 +95,24 @@ namespace PersonalProject1
 
         public static int AskQuestion(Question question)
         {
-            return -1;
+            // TODO(jcollard 2022-02-10): Instead of `results` use `question`
+            if (results == null) throw new ArgumentNullException("List of results may not be null.");
+
+            // TODO(jcollard 2022-02-10): Instead of `results` use `question.answers`
+            if (results.Count == 0) throw new ArgumentException("The list of results must contain at least 1 option.");
+
+            int ix = 1;
+            // TODO(jcollard 2022-02-10): Try `string answer in question.answers`
+            foreach (string result in results)
+            {
+                Console.WriteLine($"{ix}. {results}"); // TODO(jcollard 2022-02-10): You'll need to output each answer here
+                ix = ix + 1;
+            }
+
+            // TODO(jcollard 2022-02-10): Finally, you need to call your
+            // GetValidAnswer method here. Save the value and then return it.
+
+            return -1; 
         }
 
         // Display the question
@@ -143,15 +160,14 @@ namespace PersonalProject1
 
         public static string GetResult(List<int> scores, List<string> results)
         {
-            if (results == null) throw new ArgumentNullException("List of results may not be null.");
-            if (results.Count == 0) throw new ArgumentException("The list of results must contain at least 1 option.");
+            
 
-            int ix = 1;
-            foreach (string result in results)
-            {
-                Console.WriteLine($"{ix}. {results}");
-                ix = ix + 1;
-            }
+            // TODO(jcollard 2022-02-10): This is a tricky method to write. Each
+            // of the lists is associated with the other. I've created an
+            // example showing how to use a foreach loop to search a list for a
+            // value. You can find it here:
+            // https://jcollard.github.io/IntroToCSharpSite/examples/association-list
+            return null
         }
         public static void Main()
         {
