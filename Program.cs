@@ -95,6 +95,13 @@ namespace PersonalProject1
 
         public static int AskQuestion(Question question)
         {
+            // Display the question
+            // Loop through each answer and display it
+            // Use the GetValidAnswer method to get the user's response
+            // Return the user's response
+
+            // Second
+
             // TODO(jcollard 2022-02-10): Instead of `results` use `question`
             if (results == null) throw new ArgumentNullException("List of results may not be null.");
 
@@ -112,18 +119,24 @@ namespace PersonalProject1
             // TODO(jcollard 2022-02-10): Finally, you need to call your
             // GetValidAnswer method here. Save the value and then return it.
 
-            return -1; 
+            return -1;
         }
 
-        // Display the question
-        // Loop through each answer and display it
-        // Use the GetValidAnswer method to get the user's response
-        // Return the user's response
 
-        // Second
 
         public static int GetValidAnswer(List<string> answers)
         {
+            // Validate that there is at least 1 possible answer.
+            // If the list of answers is empty, throw an exception
+            // Otherwise, Display a message asking the user to select an option.
+            // Store the user's response in a variable name choice
+            // Validate that choice is one of the possible answers
+            // If it is not a valid answer
+            // Display an error message
+            // Go to 3
+            // Otherwise, return the user's choice.
+
+            // First
             int userChoice;
 
             do
@@ -145,22 +158,22 @@ namespace PersonalProject1
             return userChoice - 1;
         }
 
-        // Validate that there is at least 1 possible answer.
-        // If the list of answers is empty, throw an exception
-        // Otherwise, Display a message asking the user to select an option.
-        // Store the user's response in a variable name choice
-        // Validate that choice is one of the possible answers
-        // If it is not a valid answer
-        // Display an error message
-        // Go to 3
-        // Otherwise, return the user's choice.
 
-        // First
 
 
         public static string GetResult(List<int> scores, List<string> results)
         {
-            
+            // Initialize highest to 0. This variable represents the highest score we have seen so far.
+            // Initialize highestIx to 0. This variable represents the index of the highest score we have seen so far.
+            // Loop through each score in scores, tracking the index in a variable currentIx
+            // If the score is greater than the highest score
+            // Update highest to store the score (this is the highest score we have seen so far)
+            // Update highestIx to store the currentIx (this is the index of the highest score we have seen so far)
+            // After we have checked each score, highestIx should be the index of the highest score.
+            // return results[highestIx];
+
+            // Third
+
 
             // TODO(jcollard 2022-02-10): This is a tricky method to write. Each
             // of the lists is associated with the other. I've created an
@@ -169,28 +182,10 @@ namespace PersonalProject1
             // https://jcollard.github.io/IntroToCSharpSite/examples/association-list
             return null
         }
-        public static void Main()
-        {
-            List<string> results = new List<string>();
-            results.Add("First Choice");
-            results.Add("Second Choice");
-            results.Add("Third Choice");
-            DisplayResults(results);
-        }
 
 
 
-        // Initialize highest to 0. This variable represents the highest score we have seen so far.
-        // Initialize highestIx to 0. This variable represents the index of the highest score we have seen so far.
-        // Loop through each score in scores, tracking the index in a variable currentIx
-        // If the score is greater than the highest score
-        // Update highest to store the score (this is the highest score we have seen so far)
-        // Update highestIx to store the currentIx (this is the index of the highest score we have seen so far)
-        // After we have checked each score, highestIx should be the index of the highest score.
-        // return results[highestIx];
 
-        // Third
-        return null;
     }
 }
 
