@@ -26,6 +26,8 @@ namespace PersonalProject1
 
             }
 
+            int result = Program.AskQuestion(testQuestion);
+
             Question location = new Question();
 
             location.question = "Where would you like to go?";
@@ -93,14 +95,15 @@ namespace PersonalProject1
 
         public static int AskQuestion(Question question)
         {
-            // Display the question
-            // Loop through each answer and display it
-            // Use the GetValidAnswer method to get the user's response
-            // Return the user's response
-
-            // Second
             return -1;
         }
+
+        // Display the question
+        // Loop through each answer and display it
+        // Use the GetValidAnswer method to get the user's response
+        // Return the user's response
+
+        // Second
 
         public static int GetValidAnswer(List<string> answers)
         {
@@ -121,28 +124,46 @@ namespace PersonalProject1
                 }
             }
             while (userChoice <= 0 || userChoice >= answers.Count);
-          
-            return userChoice -1;
+
+            return userChoice - 1;
+        }
+
+        // Validate that there is at least 1 possible answer.
+        // If the list of answers is empty, throw an exception
+        // Otherwise, Display a message asking the user to select an option.
+        // Store the user's response in a variable name choice
+        // Validate that choice is one of the possible answers
+        // If it is not a valid answer
+        // Display an error message
+        // Go to 3
+        // Otherwise, return the user's choice.
+
+        // First
+
+
+        public static string GetResult(List<int> scores, List<string> results)
+        {
+            if (results == null) throw new ArgumentNullException("List of results may not be null.");
+            if (results.Count == 0) throw new ArgumentException("The list of results must contain at least 1 option.");
+
+            int ix = 1;
+            foreach (string result in results)
+            {
+                Console.WriteLine($"{ix}. {results}");
+                ix = ix + 1;
+            }
+        }
+        public static void Main()
+        {
+            List<string> results = new List<string>();
+            results.Add("First Choice");
+            results.Add("Second Choice");
+            results.Add("Third Choice");
+            DisplayResults(results);
         }
 
 
-            
-            
-            // Validate that there is at least 1 possible answer.
-            // If the list of answers is empty, throw an exception
-            // Otherwise, Display a message asking the user to select an option.
-            // Store the user's response in a variable name choice
-            // Validate that choice is one of the possible answers
-            // If it is not a valid answer
-            // Display an error message
-            // Go to 3
-            // Otherwise, return the user's choice.
 
-            // First
-
-
-    public static string GetResult(List<int> scores, List<string> results)
-    {
         // Initialize highest to 0. This variable represents the highest score we have seen so far.
         // Initialize highestIx to 0. This variable represents the index of the highest score we have seen so far.
         // Loop through each score in scores, tracking the index in a variable currentIx
@@ -161,5 +182,4 @@ class Question
 {
     public string question;
     public List<string> answers = new List<string>();
-}
 }
