@@ -23,10 +23,14 @@ namespace PersonalProject1
 
                 bool testGetValidAnswer = TestGetValidAnswer.RunTest();
                 Console.WriteLine($"Test testGetValidAnswer (options): {testGetValidAnswer}");
-
             }
 
-            int result = Program.AskQuestion(testQuestion);
+            List<int> scores = new List<int>();
+            scores.Add(0);
+            scores.Add(0);
+            scores.Add(0);
+            scores.Add(0);
+            scores.Add(0);
 
             Question location = new Question();
 
@@ -37,12 +41,8 @@ namespace PersonalProject1
             location.answers.Add("Texas");
             location.answers.Add("Mexico");
 
-            Console.WriteLine(location.question);
-            Console.WriteLine($"1. {location.answers[0]}");
-            Console.WriteLine($"2. {location.answers[1]}");
-            Console.WriteLine($"3. {location.answers[2]}");
-            Console.WriteLine($"4. {location.answers[3]}");
-            Console.WriteLine($"5. {location.answers[4]}");
+            int result = Program.AskQuestion(location);
+            scores[result] = scores[result] + 1;
 
             Question freetime = new Question();
 
@@ -53,12 +53,9 @@ namespace PersonalProject1
             freetime.answers.Add("go bull riding");
             freetime.answers.Add("dance");
 
-            Console.WriteLine(freetime.question);
-            Console.WriteLine($"1. {freetime.answers[0]}");
-            Console.WriteLine($"2. {freetime.answers[1]}");
-            Console.WriteLine($"3. {freetime.answers[2]}");
-            Console.WriteLine($"4. {freetime.answers[3]}");
-            Console.WriteLine($"5. {freetime.answers[4]}");
+            result = Program.AskQuestion(freetime);
+            scores[result] = scores[result] + 1;
+
 
             Question color = new Question();
 
@@ -69,12 +66,9 @@ namespace PersonalProject1
             color.answers.Add("green");
             color.answers.Add("orange");
 
-            Console.WriteLine(color.question);
-            Console.WriteLine($"1. {color.answers[0]}");
-            Console.WriteLine($"2. {color.answers[1]}");
-            Console.WriteLine($"3. {color.answers[2]}");
-            Console.WriteLine($"4. {color.answers[3]}");
-            Console.WriteLine($"5. {color.answers[4]}");
+            result = Program.AskQuestion(color);
+            scores[result] = scores[result] + 1;
+
 
             Question movie = new Question();
 
@@ -85,12 +79,20 @@ namespace PersonalProject1
             movie.answers.Add("Kung Fu Panda");
             movie.answers.Add("Coco");
 
-            Console.WriteLine(movie.question);
-            Console.WriteLine($"1. {movie.answers[0]}");
-            Console.WriteLine($"2. {movie.answers[1]}");
-            Console.WriteLine($"3. {movie.answers[2]}");
-            Console.WriteLine($"4. {movie.answers[3]}");
-            Console.WriteLine($"5. {movie.answers[4]}");
+            result = Program.AskQuestion(movie);
+            scores[result] = scores[result] + 1;
+
+            List<string> results = new List<string>();
+            results.Add("bob1");
+            results.Add("bob2");
+            results.Add("bob3");
+            results.Add("bob4");
+            results.Add("bob5");
+
+
+
+            GetResult(scores, results);
+
         }
 
         public static int AskQuestion(Question question)
@@ -100,29 +102,17 @@ namespace PersonalProject1
             // Use the GetValidAnswer method to get the user's response
             // Return the user's response
 
-            // Second
-
-            // TODO(jcollard 2022-02-10): Instead of `results` use `question`
-            if (results == null) throw new ArgumentNullException("List of results may not be null.");
-
-            // TODO(jcollard 2022-02-10): Instead of `results` use `question.answers`
-            if (results.Count == 0) throw new ArgumentException("The list of results must contain at least 1 option.");
-
+            if (question == null) throw new ArgumentNullException("List of question may not be null.");
+            if (question.answers.Count == 0) throw new ArgumentException("The list of question must contain at least 1 option.");
+            Console.WriteLine(question.question);
             int ix = 1;
-            // TODO(jcollard 2022-02-10): Try `string answer in question.answers`
-            foreach (string result in results)
+            foreach (string answer in question.answers)
             {
-                Console.WriteLine($"{ix}. {results}"); // TODO(jcollard 2022-02-10): You'll need to output each answer here
+                Console.WriteLine($"{ix}. {answer}");
                 ix = ix + 1;
             }
-
-            // TODO(jcollard 2022-02-10): Finally, you need to call your
-            // GetValidAnswer method here. Save the value and then return it.
-
-            return -1;
+            return GetValidAnswer(question.answers);
         }
-
-
 
         public static int GetValidAnswer(List<string> answers)
         {
@@ -136,30 +126,25 @@ namespace PersonalProject1
             // Go to 3
             // Otherwise, return the user's choice.
 
-            // First
             int userChoice;
-
             do
             {
-                Console.WriteLine("Enter a number greater than 0:");
+                Console.WriteLine("Enter a valid option:");
                 string input = Console.ReadLine();
                 bool isANumber = int.TryParse(input, out userChoice);
                 if (isANumber == false)
                 {
                     Console.Error.WriteLine("You did not enter a number.");
                 }
-                else if (userChoice <= 0 || userChoice >= answers.Count)
+                else if (userChoice <= 0 || userChoice > answers.Count)
                 {
-                    Console.WriteLine($"That number is not greater than 0 or less than {answers.Count}.");
+                    Console.WriteLine($"That number is not greater than 0 and less than {answers.Count + 1}.");
                 }
             }
-            while (userChoice <= 0 || userChoice >= answers.Count);
+            while (userChoice <= 0 || userChoice > answers.Count);
 
             return userChoice - 1;
         }
-
-
-
 
         public static string GetResult(List<int> scores, List<string> results)
         {
@@ -172,20 +157,24 @@ namespace PersonalProject1
             // After we have checked each score, highestIx should be the index of the highest score.
             // return results[highestIx];
 
-            // Third
-
-
-            // TODO(jcollard 2022-02-10): This is a tricky method to write. Each
-            // of the lists is associated with the other. I've created an
-            // example showing how to use a foreach loop to search a list for a
-            // value. You can find it here:
-            // https://jcollard.github.io/IntroToCSharpSite/examples/association-list
-            return null
+            if (scores == null || results == null) throw new Exception("Scores and Results Lists must be non-null.");
+            if (scores.Count == 0) throw new Exception("Cannot process an empty list.");
+            if (results.Count != scores.Count) throw new Exception("Scores and Results Lists were not the same length.");
+            int largestScore = scores[0];
+            string associatedResult = results[0];
+            int index = 0;
+            foreach (int score in scores)
+            {
+                if (score > largestScore)
+                {
+                    associatedResult = results[index];
+                    largestScore = scores[index];
+                }
+                index = index + 1;
+            }
+            Console.WriteLine($"You are {associatedResult}");
+            return associatedResult;
         }
-
-
-
-
     }
 }
 
