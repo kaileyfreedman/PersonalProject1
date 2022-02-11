@@ -32,6 +32,8 @@ namespace PersonalProject1
             scores.Add(0);
             scores.Add(0);
 
+            Console.WriteLine("This Personality Quiz will help you determine what chicken preparation you are! Are you more of a Chicken Piccata or are you secretly a Chick-Fil-A Spicy Chicken Sandwich? Take this quiz to find out today!");
+
             Question location = new Question();
 
             location.question = "Where would you like to go?";
@@ -43,7 +45,7 @@ namespace PersonalProject1
 
             int result = Program.AskQuestion(location);
             scores[result] = scores[result] + 1;
-
+            
             Question freetime = new Question();
 
             freetime.question = "What do you like to to do in your free time?";
@@ -55,7 +57,6 @@ namespace PersonalProject1
 
             result = Program.AskQuestion(freetime);
             scores[result] = scores[result] + 1;
-
 
             Question color = new Question();
 
@@ -83,13 +84,11 @@ namespace PersonalProject1
             scores[result] = scores[result] + 1;
 
             List<string> results = new List<string>();
-            results.Add("bob1");
-            results.Add("bob2");
-            results.Add("bob3");
-            results.Add("bob4");
-            results.Add("bob5");
-
-
+            results.Add("a Chicken Piccata");
+            results.Add("a Chick-fil-A Spicy Chicken Sandwich");
+            results.Add("Teriyaki Chicken");
+            results.Add("BBQ Chicken Wings");
+            results.Add("Chicken Fajitas");
 
             GetResult(scores, results);
 
